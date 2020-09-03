@@ -8,7 +8,10 @@
     {% for restaurant in restaurants %}
     <div class="col-md-4">
         <div class="card my-card">
-          <div class="card-body">
+          <div class="card-body text-center">
+            {% if restaurant.logo %}
+              <img src="{{restaurant.logo.url}}" alt="logo" width="100%">
+            {% endif %}
             <h5 class="card-title">{{restaurant.name}}</h5>
             <p class="card-text">{{restaurant.description|truncatechars:25}}</p>
           </div>
@@ -22,4 +25,3 @@
     {% endfor %}
 </div>
 {% endblock content %}
-
